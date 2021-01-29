@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+
+  <title>SISTA | Sistem Informasi Seminar Tugas Akhir</title>
+
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css">
+  <!-- Theme style -->
+  <link rel="stylesheet" href="https://adminlte.io/themes/dev/AdminLTE/dist/css/adminlte.min.css">
+  <!-- Google Font: Source Sans Pro -->
+  <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.datatables.net/1.10.23/css/dataTables.bootstrap4.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/css/select2.min.css">
+  <link rel="stylesheet" href="https://select2.github.io/select2-bootstrap-theme/css/select2-bootstrap.css">
+  <link rel="stylesheet" href="../../../../dist/css/style.css">
+
+</head>
+
+<body class="hold-transition layout-top-nav layout-navbar-fixed">
+  <input type="hidden" id="page" value="daftar_peserta">
+  <div class="wrapper">
+    <!-- Navbar -->
+    <nav class="main-header navbar navbar-expand-md navbar-dark navbar-cyan">
+      <button class="navbar-toggler order-0 mr-2" type="button" data-toggle="collapse" data-target="#navbarCollapse"
+        aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <a href="../home.html" class="navbar-brand">
+        <img src="../../../../dist/img/sista.jpg" alt="SISTA Logo" class="profile-user-img img-circle elevation-2"
+          style="opacity: .9; border: none; width: 50px;">
+        <span class="brand-text font-weight-light"><b>SISTA</b> STT-NF</span>
+      </a>
+      <div class="collapse navbar-collapse order-3" id="navbarCollapse">
+        <!-- Left navbar links -->
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link" href="../home.html"><i class="fas fa-home"></i> Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link aktif" href="jadwal.html"><i class="fas fa-clipboard-list"></i>
+              Jadwal</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="../daftar_seminar/daftar_seminar.html"><i class="fas fa-edit"></i>
+              Daftar Seminar</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="../berita/berita1.html"><i class="fas fa-newspaper"></i>
+              Berita</a>
+          </li>
+        </ul>
+
+        <!-- SEARCH FORM -->
+        <form class="form-inline ml-0 ml-md-3">
+          <div class="input-group input-group-sm">
+            <input class="form-control form-control-navbar" type="search" placeholder="Search" aria-label="Search">
+            <div class="input-group-append">
+              <button class="btn btn-navbar" type="submit">
+                <i class="fas fa-search"></i>
+              </button>
+            </div>
+          </div>
+        </form>
+      </div>
+      <ul class="order-1 order-md-3 navbar-nav navbar-no-expand ml-auto text-white">
+      </ul>
+    </nav>
+    <nav class="main-header navbar navbar-expand navbar-white navbar-light row-bread">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="../home.html"><i class="fas fa-home"></i> Home</a></li>
+            <li class="breadcrumb-item"><a href="jadwal.html"><i class="fas fa-clipboard-list"></i>
+                jadwal</a></li>
+            <li class="breadcrumb-item active"><i class="fas fa-edit"></i> Daftar peserta</li>
+          </ol>
+        </li>
+      </ul>
+      <!-- Right navbar links -->
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item dropdown">
+          <a class="nav-link btn" data-toggle="dropdown" href="#">
+            <i class="fas fa-user"></i>
+            <span> Member 01 </span>
+            <i class="fas fa-caret-down"></i>
+          </a>
+          <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right elevation-0">
+            <!-- Message Start -->
+            <div class="card card-widget widget-user elevation-2">
+              <!-- Add the bg color to the header using any of the bg-* classes -->
+              <div class="widget-user-header bg-info">
+                <h3 class="widget-user-username">Member Prasetya</h3>
+                <p class="widget-user-desc">Member01</p>
+              </div>
+              <div class="widget-user-image">
+                <img class="img-circle elevation-2" src="../../../../dist/img/1.jpeg" alt="User Avatar">
+              </div>
+              <div class="card-footer">
+                <p class="widget-user-desc text-center mb-3">User Member</p>
+                <div class="row justify-content-center">
+                  <div class="col text-center">
+                    <a href="../profile/profile.html" class="btn btn-primary"><i class="fas fa-user"></i> Profil</a>
+                  </div>
+                  <div class="col text-center">
+                    <a href="../../../../index.html" class="btn btn-danger"><i class="fas fa-sign-out-alt"></i>
+                      Keluar</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </li>
+      </ul>
+    </nav>
+    <!-- /.navbar -->
+
+    <!-- Content Wrapper. Contains page content -->
+    <div class="content-wrapper">
+      <div class="content">
+        <div class="row justify-content-center">
+          <div class="col-11 mt-3">
+            <h1 id="daftar_peserta" class="text-info mt-3">Jadwal Seminar</h1>
+          </div>
+          <div class="col-sm-11">
+            <div class="row">
+              <div class="col-lg-9">
+                <div class="card">
+                  <div class="card-body">
+                    <table class="noborder">
+                      <tr>
+                        <td><span>Nama</span></td>
+                        <td>:</td>
+                        <td>Diego Armando</td>
+                      </tr>
+                      <tr>
+                        <td><span>Judul</span></td>
+                        <td>:</td>
+                        <td>Rancang Bangun Aplikasi Seminar Tugas Akhir Berbasis Web Menggunakan
+                          MVC Framework</td>
+                      </tr>
+                      <tr>
+                        <td><span>Waktu</span></td>
+                        <td>:</td>
+                        <td>Senin, 04 Januari 2021. 10:00 WIB</td>
+                      </tr>
+                    </table>
+                    <div class="card mt-3">
+                      <div class="card-header">
+                        <h4 class="text-info">Form Daftar Peserta Seminar</h4>
+                      </div>
+                      <div class="card-body">
+                        <form class="needs-validation" id="form_data">
+                          <div class="row">
+                            <div class="col-6">
+                              <div class="row">
+                                <div class="col-sm-12 mb-2">
+                                  <label for="nama" class="mt-0 mb-0">Nama Lengkap</label><br>
+                                  <span class="text-red" id="msg_nama">Nama tidak boleh kosong!</span>
+                                  <input type="text" class="form-control form-control-sm" id="nama" name="nama"
+                                    placeholder="Masukkan nama lengkap">
+                                </div>
+                                <div class="col-sm-12 mb-2">
+                                  <label for="nim" class="mt-0 mb-0">NIM</label><br>
+                                  <span class="text-red" id="msg_nim">Nomor NIM tidak boleh kosong!</span>
+                                  <input type="text" class="form-control form-control-sm" id="nim" name="nim"
+                                    placeholder="Masukkan nomor NIM">
+                                </div>
+                                <div id="fgprodi" class="form-group col-md-12">
+                                  <label for="prodi" class="mt-0 mb-0">Prodi</label><br>
+                                  <span class="help-block text-red" id="msg_prodi">Pilih salah satu prodi!</span>
+                                  <select class="custom-select select2" name="prodi" id="prodi" >
+                                    <option value="">--Pilih prodi--</option>
+                                    <option value="si">Sistem Informasi</option>
+                                    <option value="ti">Teknik Informatika</option>
+                                  </select>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <label class="mt-0 mb-0">Program</label>
+                          <div class="row mb-1 mt-2 justify-content-center row-radio">
+
+                            <div class="custom-control custom-radio col-2">
+                              <input type="radio" class="custom-control-input" name="program" id="d3" value="d3">
+                              <label class="custom-control-label" for="d3">D3</label>
+                            </div>
+
+
+                            <div class="custom-control custom-radio col-3">
+                              <input type="radio" class="custom-control-input" name="program" id="s1reg" value="s1reg">
+                              <label class="custom-control-label" for="s1reg">S1 Reguler</label>
+                            </div>
+
+
+                            <div class="custom-control custom-radio col-3">
+                              <input type="radio" class="custom-control-input" name="program" id="s1fast"
+                                value="s1fast">
+                              <label class="custom-control-label" for="s1fast">S1 Fast Trackt</label>
+                            </div>
+
+
+                            <div class="custom-control custom-radio col-3">
+                              <input type="radio" class="custom-control-input" name="program" id="s2" value="s2">
+                              <label class="custom-control-label" for="s2">S2</label>
+                            </div>
+                          </div>
+                          <span class="text-red" id="msg_program">Pilih salah satu Program!</span>
+                        </form>
+                        <button class="btn btn-primary btn-sm mt-2" id="btn_daftar">Daftar</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="modal fade bd-example-modal-lg" id="modal_alert" tabindex="-1" role="dialog"
+                aria-labelledby="myLargeModalLabel" aria-hidden="true">
+                <div class="modal-dialog modal-lg">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h5><i class="fas fa-check-circle"></i> Sukses!</h5>
+                      <button type="button" class="pull-right btn btn-danger btn-sm" data-dismiss="modal"><i
+                          class="fas fa-times"></i></button>
+                    </div>
+                    <div class="modal-body">
+                      <p>Pendaftaran peserta seminar berhasil!</p>
+                      <button type="button" class="pull-right btn btn-primary btn-sm" id="btn_oke"><i
+                          class="fas fa-check"></i>Oke</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-lg-3">
+                <div class="card">
+                  <div class="card-header">
+                    <h3 class="card-title text-info">Berita Terbaru</h3>
+                  </div>
+                  <!-- /.card-header -->
+                  <div class="card-body p-0">
+                    <ul class="products-list product-list-in-card pl-2 pr-2">
+                      <li class="item">
+                        <a href="../berita/berita1.html">
+                          <div class="product-img">
+                            <img class="mt-2"
+                              src="https://ais.nurulfikri.ac.id/img/articles/items/pembelajaran-online-stt-terpadu-nurul-fikri-selama-pandemi-covid-19.jpg">
+                          </div>
+                          <div class="product-info">
+                            <h6 class="mb-0 mt-0">Pembelajaran Online STT Terpadu Nurul
+                              Fikri Selama Pandemi COVID-19</h6>
+                            <small class="product-description text-muted">Senin, 16 Maret
+                              2020 - 08:00</small>
+                          </div>
+                        </a>
+                      </li>
+                      <li class="item">
+                        <a href="../berita/berita2.html">
+                          <div class="product-img">
+                            <img class="mt-2"
+                              src="https://ais.nurulfikri.ac.id/img/articles/items/rembukan-ilmiah-tiap-bulan-batch-10-stt-terpadu-nurul-fikri.jpg">
+                          </div>
+                          <div class="product-info">
+                            <h6 class="mb-0 mt-0">Rembukan Ilmiah Tiap Bulan Batch 10 STT
+                              Terpadu Nurul Fikri</h6>
+                            <small class="product-description text-muted">Rabu, 18 Desember
+                              2019 - 16:00</small>
+                          </div>
+                        </a>
+                      </li>
+                      <li class="item">
+                        <a href="../berita/berita3.html">
+                          <div class="product-img">
+                            <img class="mt-2"
+                              src="https://ais.nurulfikri.ac.id/img/articles/items/kuliah-pengembangan-startup-di-stt-terpadu-nurul-fikri.jpg">
+                          </div>
+                          <div class="product-info">
+                            <h6 class="mb-0 mt-0">Kuliah Pengembangan Startup di STT Terpadu
+                              Nurul Fikri</h6>
+                            <small class="product-description text-muted">Selasa, 17
+                              Desember 2019 - 15:00</small>
+                          </div>
+                        </a>
+                      </li>
+                      <li class="item">
+                        <a href="../berita/berita4.html">
+                          <div class="product-img">
+                            <img class="mt-2"
+                              src="https://ais.nurulfikri.ac.id/img/articles/items/program-class-link--match-di-stt-terpadu-nurul-fikri.jpg">
+                          </div>
+                          <div class="product-info">
+                            <h6 class="mb-0 mt-0">Program Class Link & Match di STT Terpadu
+                              Nurul Fikri</h6>
+                            <small class="product-description text-muted">Senin, 16 Desember
+                              2019 - 15:00</small>
+                          </div>
+                        </a>
+                      </li>
+                      <li class="item">
+                        <a href="../berita/berita5.html">
+                          <div class="product-img">
+                            <img class="mt-2"
+                              src="https://ais.nurulfikri.ac.id/img/articles/items/kampus-nurul-fikri-memberikan-penghargaan-kepada-mahasiswa-berprestasi.jpg">
+                          </div>
+                          <div class="product-info">
+                            <h6 class="mb-0 mt-0">Kampus Nurul Fikri Memberikan Penghargaan
+                              Kepada Mahasiswa Berprestasi</h6>
+                            <small class="product-description text-muted">Kamis, 16 Maret
+                              2017 - 14:46</small>
+                          </div>
+                        </a>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="card">
+                  <div class="card-header">
+                    <h3 class="card-title text-info">Layanan lainnya</h3>
+                  </div>
+                  <!-- /.card-header -->
+                  <div class="card-body sidebar-light-info content-side">
+                    <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu"
+                      data-accordion="false">
+                      <li class="nav-item">
+                        <a href="http://elen.nurulfikri.ac.id/" class="nav-link">
+                          <i class="fas fa-angle-right"></i>
+                          <p>
+                            E-Learning
+                          </p>
+                        </a>
+                      </li>
+                      <li class="nav-item">
+                        <a href="https://library.nurulfikri.ac.id/" class="nav-link">
+                          <i class="fas fa-angle-right"></i>
+                          <p>
+                            E-Library
+                          </p>
+                        </a>
+                      </li>
+                      <li class="nav-item">
+                        <a href="http://ais.nurulfikri.ac.id/" class="nav-link">
+                          <i class="fas fa-angle-right"></i>
+                          <p>
+                            Sistem Akademik
+                          </p>
+                        </a>
+                      </li>
+                      <li class="nav-item">
+                        <a href="http://slibc.nurulfikri.ac.id/" class="nav-link">
+                          <i class="fas fa-angle-right"></i>
+                          <p>
+                            Inkubator Bisnis
+                          </p>
+                        </a>
+                      </li>
+                      <li class="nav-item">
+                        <a href="http://journal.nurulfikri.ac.id/index.php/JIT" class="nav-link">
+                          <i class="fas fa-angle-right"></i>
+                          <p>
+                            Jurnal
+                          </p>
+                        </a>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              <!-- /.col-md-6 -->
+            </div>
+            <!-- /.row -->
+
+          </div>
+          <!-- /.content -->
+        </div>
+      </div>
+      <footer class="main-footer">
+        <!-- To the right -->
+        <div class="row justify-content-center">
+          <div class="col-sm-10">
+            <div class="row justify-content-center">
+              <div class="col-sm-3 ft-alamat">
+                <h5 class="title-info"><i class="fas fa-map-marker-alt"></i> Alamat</h5>
+                <p class="text-muted footer-text">Jalan Lenteng Agung Raya No. 20,<br>Kel. Lenteng Agung
+                  Kec. Jagakarsa,<br>Jakarta Selatan - 12640</p>
+              </div>
+              <div class="col-sm-3 ft-contact">
+                <h5 class="title-info"><i class="fas fa-address-book mr-1"></i> Contact</h5>
+                <p class="text-muted footer-text">
+                  (021) 7863191 <br>
+                  +62 857-1624-3174
+                </p>
+                <a href="mailto:info@nurulfikri.ac.id">
+                  <p class="text-muted footer-link"><i class="far fa-envelope"></i>
+                    info@nurulfikri.ac.id</p>
+                </a>
+              </div>
+              <div class="col-sm-3 ft-social">
+                <h5 class="title-info"><i class="fas fa-share-alt mr-1"></i> Sosial Media</h5>
+                <a href="https://www.facebook.com/STTTerpaduNF">
+                  <p class="text-muted footer-link"><i class="fab fa-facebook"></i> STTTerpaduNF</p>
+                </a>
+                <a href="https://twitter.com/STTTerpaduNF">
+                  <p class="text-muted footer-link"><i class="fab fa-twitter"></i> @STTTerpaduNF</p>
+                </a>
+                <a href="https://instagram.com/STTTerpaduNF">
+                  <p class="text-muted footer-link"><i class="fab fa-instagram"></i> @sttterpadunf</p>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Default to the left -->
+        <div class="footer-bottom">
+          <p class="text-center"><strong>Copyright &copy; 2021-<a href="https://nurulfikri.ac.id">STT Terpadu
+                Nurul Fikri</a>.</strong> All rights reserved.</p>
+        </div>
+      </footer>
+    </div>
+  </div>
+  <!-- ./wrapper -->
+
+  <!-- REQUIRED SCRIPTS -->
+
+  <!-- jQuery -->
+  <script src="https://adminlte.io/themes/dev/AdminLTE/plugins/jquery/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/js/all.min.js"></script>
+  <!-- Bootstrap 4 -->
+  <script src="https://adminlte.io/themes/dev/AdminLTE/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <!-- AdminLTE App -->
+  <script src="https://adminlte.io/themes/dev/AdminLTE/dist/js/adminlte.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-beta.1/dist/js/select2.min.js"></script>
+  <script src="../../../../dist/js/script.js"></script>
+</body>
+
+</html>
