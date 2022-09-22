@@ -115,7 +115,10 @@
                         <h4 id="nameChar"></h4>
                     </div>
                     <div class="modal-body">
-                        <img src="" class="img-fluid rounded mx-auto d-block" id="gambar">
+                        <img src="" class="img-fluid mb-5 rounded mx-auto d-block" id="gambar">
+                        <div id="ability">
+                            <h4>Abilities</h4>
+                        </div>
                         <div id="audio"></div>
                     </div>
                     <div class="modal-footer">
@@ -149,36 +152,72 @@
                     });
                     $('#audio').append(`<audio id="sound" autoplay src="assets/audio/chum.ogg"></audio>`);
                     $('#nameChar').html('CHUM');
+                    $('#ability').append(`
+                        <ul id="abl_list">
+                            <li>Base Damage&nbsp;:&nbsp;250</li>
+                            <li>Attack Speed&nbsp;:&nbsp;25</li>
+                            <li>Movement Speed&nbsp;:&nbsp;45</li>
+                        </ul>
+                    `);
                 } else if (val == 'ratu') {
                     $('#gambar').attr({
                         'src': 'assets/img/ratu.png'
                     });
                     $('#audio').append(`<audio id="sound" autoplay src="assets/audio/ratu.mpeg"></audio>`);
                     $('#nameChar').html('Bang Parit');
+                    $('#ability').append(`
+                        <ul id="abl_list">
+                            <li>Base Damage&nbsp;:&nbsp;300</li>
+                            <li>Attack Speed&nbsp;:&nbsp;15</li>
+                            <li>Movement Speed&nbsp;:&nbsp;50</li>
+                        </ul>
+                    `);
                 } else if (val == 'andika') {
                     $('#gambar').attr({
                         'src': 'assets/img/dika.png'
                     });
                     $('#audio').append(`<audio id="sound" autoplay src="assets/audio/andika.ogg"></audio>`);
                     $('#nameChar').html('Bang Dick');
+                    $('#ability').append(`
+                        <ul id="abl_list">
+                            <li>Base Damage&nbsp;:&nbsp;450</li>
+                            <li>Attack Speed&nbsp;:&nbsp;20</li>
+                            <li>Movement Speed&nbsp;:&nbsp;35</li>
+                        </ul>
+                    `);
                 } else if (val == 'agung') {
                     $('#gambar').attr({
                         'src': 'assets/img/agung.png'
                     });
                     $('#audio').append(`<audio id="sound" autoplay src="assets/audio/agung2.ogg"></audio>`);
                     $('#nameChar').html('Lord Agung');
+                    $('#ability').append(`
+                        <ul id="abl_list">
+                            <li>Base Damage&nbsp;:&nbsp;250</li>
+                            <li>Attack Speed&nbsp;:&nbsp;50</li>
+                            <li>Movement Speed&nbsp;:&nbsp;45</li>
+                        </ul>
+                    `);
                 } else if (val == 'rehan') {
                     $('#gambar').attr({
                         'src': 'assets/img/rehan.jpg'
                     });
                     $('#audio').append(`<audio id="sound" autoplay src="assets/audio/rehan.mp3"></audio>`);
                     $('#nameChar').html('Rehan');
+                    $('#ability').append(`
+                        <ul id="abl_list">
+                            <li>Base Damage&nbsp;:&nbsp;300</li>
+                            <li>Attack Speed&nbsp;:&nbsp;45</li>
+                            <li>Movement Speed&nbsp;:&nbsp;50</li>
+                        </ul>
+                    `);
                 }
                 modal.show();
             });
         });
         mymodal.addEventListener('hidden.bs.modal', () => {
             $('#sound').remove();
+            $('#abl_list').remove();
         });
     });
 </script>
