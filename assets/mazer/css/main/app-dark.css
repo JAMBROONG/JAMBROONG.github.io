@@ -401,7 +401,8 @@ body.theme-dark [type=button],
 body.theme-dark [type=reset],
 body.theme-dark [type=submit],
 body.theme-dark button {
-    -webkit-appearance: button
+    -webkit-appearance: button;
+    appearance: button;
 }
 
 body.theme-dark [type=button]:not(:disabled),
@@ -462,11 +463,13 @@ body.theme-dark ::-webkit-inner-spin-button {
 
 body.theme-dark [type=search] {
     -webkit-appearance: textfield;
+    appearance: textfield;
     outline-offset: -2px
 }
 
 body.theme-dark ::-webkit-search-decoration {
-    -webkit-appearance: none
+    -webkit-appearance: none;
+    appearance: none;
 }
 
 body.theme-dark ::-webkit-color-swatch-wrapper {
@@ -475,6 +478,7 @@ body.theme-dark ::-webkit-color-swatch-wrapper {
 
 body.theme-dark ::file-selector-button {
     -webkit-appearance: button;
+    appearance: none;
     font: inherit
 }
 
