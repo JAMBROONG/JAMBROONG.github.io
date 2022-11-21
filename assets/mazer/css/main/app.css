@@ -668,8 +668,7 @@ svg {
 
 table {
     border-collapse: collapse;
-    caption-side: bottom;
-    border: 1px solid lightgray
+    caption-side: bottom
 }
 
 caption {
@@ -2354,7 +2353,7 @@ progress {
 .table {
     --bs-table-color: #607080;
     --bs-table-bg: transparent;
-    --bs-table-border-color: #eee;
+    --bs-table-border-color: lightgray;
     --bs-table-accent-bg: transparent;
     --bs-table-striped-color: #607080;
     --bs-table-striped-bg: rgba(0, 0, 0, .05);
