@@ -83,7 +83,7 @@ DataTable.ext.buttons.print = {
 	className: 'buttons-print',
 
 	text: function ( dt ) {
-		return dt.i18n( 'buttons.print', 'Print' );
+		return dt.i18n( 'buttons.print', '<i class="bi-printer-fill"></i>' );
 	},
 
 	action: function ( e, dt, button, config ) {
