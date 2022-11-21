@@ -668,7 +668,8 @@ svg {
 
 table {
     border-collapse: collapse;
-    caption-side: bottom
+    caption-side: bottom;
+    border: 1px solid lightgray
 }
 
 caption {
