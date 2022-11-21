@@ -9,20 +9,32 @@
 	<link rel="stylesheet" href="https://jambroong.github.io/assets/mazer/css/main/app.css">
 	<link rel="stylesheet" href="https://jambroong.github.io/assets/mazer/css/main/app-dark.css">
 
-	<link rel="shortcut icon" href="https://jambroong.github.io/assets/mazer/images/logo/favicon.svg" type="image/x-icon">
+	<link rel="shortcut icon" href="https://jambroong.github.io/assets/mazer/images/logo/favicon.svg"
+		type="image/x-icon">
 	<link rel="shortcut icon" href="https://jambroong.github.io/assets/mazer/images/logo/favicon.png" type="image/png">
 
-	<link rel="stylesheet" href="https://jambroong.github.io/assets/mazer/extensions/simple-datatables/style.css">
-	<link rel="stylesheet" href="https://jambroong.github.io/assets/mazer/css/pages/simple-datatables.css">
+	<!-- <link rel="stylesheet" href="https://jambroong.github.io/assets/mazer/extensions/simple-datatables/style.css">
+	<link rel="stylesheet" href="https://jambroong.github.io/assets/mazer/css/pages/simple-datatables.css"> -->
 
-	<link rel="stylesheet" href="https://jambroong.github.io/assets/mazer/extensions/@fortawesome/fontawesome-free/css/all.min.css">
+	<link rel="stylesheet"
+		href="https://jambroong.github.io/assets/mazer/extensions/@fortawesome/fontawesome-free/css/all.min.css">
 
 	<link rel="stylesheet" href="https://jambroong.github.io/assets/mazer/extensions/filepond/filepond.css">
 	<link rel="stylesheet"
 		href="https://jambroong.github.io/assets/mazer/extensions/filepond-plugin-image-preview/filepond-plugin-image-preview.css">
 	<link rel="stylesheet" href="https://jambroong.github.io/assets/mazer/extensions/toastify-js/src/toastify.css">
 
-	<link rel="stylesheet" href="https://jambroong.github.io/assets/mazer/extensions/choices.js/public/assets/styles/choices.min.css">
+	<link rel="stylesheet"
+		href="https://jambroong.github.io/assets/mazer/extensions/choices.js/public/assets/styles/choices.min.css">
+
+	<link rel="stylesheet"
+		href="https://jambroong.github.io/assets/plugins/datatables-bs4/css/dataTables.bootstrap4.min.css">
+	<link rel="stylesheet"
+		href="https://jambroong.github.io/assets/plugins/datatables-responsive/css/responsive.bootstrap4.min.css">
+	<link rel="stylesheet"
+		href="https://jambroong.github.io/assets/plugins/datatables-buttons/css/buttons.bootstrap4.min.css">
+
+
 </head>
 
 <body>
@@ -40,7 +52,8 @@
 						<div class="theme-toggle d-flex gap-2  align-items-center">
 							<i class="fas fa-sun" style="font-size: 22px;"></i>
 							<div class="form-check form-switch fs-6">
-								<input class="form-check-input  me-0" type="checkbox" id="toggle-dark" style="cursor: pointer">
+								<input class="form-check-input  me-0" type="checkbox" id="toggle-dark"
+									style="cursor: pointer">
 								<label class="form-check-label"></label>
 							</div>
 							<i class="fas fa-moon" style="font-size: 20px;"></i>
@@ -66,14 +79,12 @@
 							</a>
 						</li>
 
-						<li
-							class="sidebar-item has-sub">
+						<li class="sidebar-item has-sub">
 							<a href="#" class='sidebar-link'>
 								<i class="fas fa-archive"></i>
 								<span>Master Data</span>
 							</a>
-							<ul
-								class="submenu">
+							<ul class="submenu">
 								<li class="submenu-item">
 									<a href="#">Kategori</a>
 								</li>
@@ -122,15 +133,15 @@
 						</a>
 
 						<button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-							data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
-							aria-label="Toggle navigation">
+							data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+							aria-expanded="false" aria-label="Toggle navigation">
 							<span class="navbar-toggler-icon"></span>
 						</button>
 						<div class="collapse navbar-collapse" id="navbarSupportedContent">
 							<ul class="navbar-nav ms-auto mb-lg-0">
 								<li class="nav-item dropdown me-1">
-									<a class="nav-link active dropdown-toggle text-gray-600" href="#" data-bs-toggle="dropdown"
-										aria-expanded="false">
+									<a class="nav-link active dropdown-toggle text-gray-600" href="#"
+										data-bs-toggle="dropdown" aria-expanded="false">
 										<i class='bi bi-envelope bi-sub fs-4'></i>
 									</a>
 									<ul class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdownMenuButton">
@@ -141,8 +152,8 @@
 									</ul>
 								</li>
 								<li class="nav-item dropdown me-3">
-									<a class="nav-link active dropdown-toggle text-gray-600" href="#" data-bs-toggle="dropdown"
-										data-bs-display="static" aria-expanded="false">
+									<a class="nav-link active dropdown-toggle text-gray-600" href="#"
+										data-bs-toggle="dropdown" data-bs-display="static" aria-expanded="false">
 										<i class='bi bi-bell bi-sub fs-4'></i>
 									</a>
 									<ul class="dropdown-menu dropdown-menu-end notification-dropdown"
@@ -207,7 +218,8 @@
 									<li>
 										<hr class="dropdown-divider">
 									</li>
-									<li><a class="dropdown-item" href="#"><i class="icon-mid bi bi-box-arrow-left me-2"></i> Logout</a>
+									<li><a class="dropdown-item" href="#"><i
+												class="icon-mid bi bi-box-arrow-left me-2"></i> Logout</a>
 									</li>
 								</ul>
 							</div>
@@ -240,11 +252,37 @@
 								<h4 class="card-title">Example Content</h4>
 							</div>
 							<div class="card-body">
-								Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur quas omnis
-								laudantium tempore
-								exercitationem, expedita aspernatur sed officia asperiores unde tempora maxime odio
-								reprehenderit
-								distinctio incidunt! Vel aspernatur dicta consequatur!
+								<table class="table table-striped table-bordered table-hover" id="example1">
+									<thead>
+										<tr>
+											<th class="text-center">No</th>
+											<th class="text-center">Jenis Denda</th>
+											<th class="text-center">Keterangan</th>
+											<th class="text-center">Tarif</th>
+
+										</tr>
+									</thead>
+									<tbody class="text-center">
+										<tr>
+											<td>1</td>
+											<td>Kerusakan</td>
+											<td>bukunya rusak</td>
+											<td>200000</td>
+										</tr>
+										<tr>
+											<td>2</td>
+											<td>Kehilangan</td>
+											<td>bukunya hilang</td>
+											<td>300000</td>
+										</tr>
+										<tr>
+											<td>3</td>
+											<td>Keterlambatan</td>
+											<td>terlambat mengembalikan</td>
+											<td>2000</td>
+										</tr>
+									</tbody>
+								</table>
 							</div>
 						</div>
 					</section>
@@ -271,28 +309,55 @@
 			</div>
 		</div>
 	</div>
-	<script src="https://jambroong.github.io/assets/mazer/js/bootstrap.js"></script>
 	<script src="https://jambroong.github.io/assets/mazer/js/app.js"></script>
-	<script src="https://jambroong.github.io/assets/mazer/extensions/simple-datatables/umd/simple-datatables.js"></script>
-	<script src="https://jambroong.github.io/assets/mazer/js/pages/simple-datatables.js"></script>
+	<!-- <script
+			src="https://jambroong.github.io/assets/mazer/extensions/simple-datatables/umd/simple-datatables.js"></script>
+			<script src="https://jambroong.github.io/assets/mazer/js/pages/simple-datatables.js"></script> -->
 
 	<script src="https://jambroong.github.io/assets/mazer/extensions/filepond/filepond.js"></script>
 	<script src="https://jambroong.github.io/assets/mazer/extensions/toastify-js/src/toastify.js"></script>
-	<script src="https://jambroong.github.io/assets/mazer/extensions/choices.js/public/assets/scripts/choices.js"></script>
+	<script
+		src="https://jambroong.github.io/assets/mazer/extensions/choices.js/public/assets/scripts/choices.js"></script>
 
-
+	<script src="https://jambroong.github.io/assets/mazer/js/bootstrap.js"></script>
+	<script src="https://jambroong.github.io/assets/plugins/jquery/jquery.min.js"></script>
+	<!-- Bootstrap 4 -->
+	<!-- <script src="https://jambroong.github.io/assets/plugins/bootstrap/js/bootstrap.bundle.min.js"></script> -->
+	<!-- DataTables  & Plugins -->
+	<script src="https://jambroong.github.io/assets/plugins/datatables/jquery.dataTables.min.js"></script>
+	<script src="https://jambroong.github.io/assets/plugins/datatables-bs4/js/dataTables.bootstrap4.min.js"></script>
+	<script
+		src="https://jambroong.github.io/assets/plugins/datatables-responsive/js/dataTables.responsive.min.js"></script>
+	<script
+		src="https://jambroong.github.io/assets/plugins/datatables-responsive/js/responsive.bootstrap4.min.js"></script>
+	<script src="https://jambroong.github.io/assets/plugins/datatables-buttons/js/dataTables.buttons.min.js"></script>
+	<script src="https://jambroong.github.io/assets/plugins/datatables-buttons/js/buttons.bootstrap4.min.js"></script>
+	<script src="https://jambroong.github.io/assets/plugins/jszip/jszip.min.js"></script>
+	<script src="https://jambroong.github.io/assets/plugins/pdfmake/pdfmake.min.js"></script>
+	<script src="https://jambroong.github.io/assets/plugins/pdfmake/vfs_fonts.js"></script>
+	<script src="https://jambroong.github.io/assets/plugins/datatables-buttons/js/buttons.html5.min.js"></script>
+	<script src="https://jambroong.github.io/assets/plugins/datatables-buttons/js/buttons.print.min.js"></script>
+	<script src="https://jambroong.github.io/assets/plugins/datatables-buttons/js/buttons.colVis.min.js"></script>
 	<script>
-		setTimeout(() => {
-			Toastify({
-				text: "{{ $message }}",
-				duration: 5000,
-				close: true,
-				backgroundColor: "#4fbe87",
-			}).showToast()
-		}, 200);
+		// setTimeout(() => {
+		// 	Toastify({
+		// 		text: "{{ $message }}",
+		// 		duration: 5000,
+		// 		close: true,
+		// 		style: {
+		// 			background: "#4fbe87",
+		// 		},
+		// 	}).showToast()
+		// }, 200);
 	</script>
 
 	<script>
+		$(function () {
+			$("#example1").DataTable({
+				"responsive": true, "lengthChange": false, "autoWidth": false,
+				"buttons": ["copy", "csv", "excel", "pdf", "print", "colvis"]
+			}).buttons().container().appendTo('#example1_wrapper .col-md-6:eq(0)');
+		});
 		const preload = document.querySelector('.preload-wrapper');
 		window.addEventListener('load', function () {
 			preload.classList.add('fade-out-animation');
